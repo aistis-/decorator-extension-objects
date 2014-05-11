@@ -13,3 +13,6 @@ hs_err_pid*
 
 # IDEA files
 .idea/
+/bin
+.classpath
+.project

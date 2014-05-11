@@ -1,10 +1,36 @@
 package psi.iv.ii.decorator;
 
+import java.util.Map;
+
 abstract class DarbininkasDecorator implements DarbininkasInterface {
-
-
-    public DarbininkasDecorator(DarbininkasInterface darbininkas) {
-
+    protected DarbininkasInterface dekoruojamasDarbininkas;
+ 
+    public DarbininkasDecorator (DarbininkasInterface dekoruojamasDarbininkas) {
+        this.dekoruojamasDarbininkas = dekoruojamasDarbininkas;
     }
-
+    
+    public void dirbti(Map<String, Object> darbai) {
+    	dekoruojamasDarbininkas.dirbti(darbai);
+    }
+    
+    public String kaMoka() {
+    	return dekoruojamasDarbininkas.kaMoka();
+    }
+    
+    public void pridetiDarba(String darbas) {
+    	dekoruojamasDarbininkas.pridetiDarba(darbas);
+    }
+    
+    public static DarbininkasInterface pasalintiRole(DarbininkasInterface darbininkas, String rolesKlasesPavadinimas) {
+		try {
+			if (rolesKlasesPavadinimas.equals(darbininkas.getClass().getSimpleName())) {
+				return ((DarbininkasDecorator) darbininkas).dekoruojamasDarbininkas;
+			} else {
+				((DarbininkasDecorator) darbininkas).dekoruojamasDarbininkas = pasalintiRole(((DarbininkasDecorator) darbininkas).dekoruojamasDarbininkas, rolesKlasesPavadinimas);
+				return darbininkas;
+			}
+		} catch (ClassCastException | NullPointerException e) {
+			return null;
+		}
+	}
 }
