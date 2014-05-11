@@ -1,8 +1,8 @@
-package psi.iv.ii;
+package psi.iv.ii.decorator;
 
 public class Statybos {
 
     public static void main(String[] args) {
-	// write your code here
+
     }
 }
