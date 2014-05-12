@@ -8,13 +8,21 @@ public class MurininkasDecorator extends DarbininkasDecorator {
     }
 	
 	public void dirbti(Map<String, Object> darbai) {
-		super.pridetiDarba("maisyti glaista");
-		super.pridetiDarba("muryti sienas");
+		maisytiGlaista();
+		murytiSienas();
 		
 		super.dirbti(darbai);
     }
 	
 	public String kaMoka() {
 		return super.kaMoka() + ", maisyti glaista, muryti sienas";
+	}
+	
+	private void maisytiGlaista() {
+		super.pridetiDarba("maisyti glaista");
+	}
+	
+	private void murytiSienas() {
+		super.pridetiDarba("muryti sienas");
 	}
 }

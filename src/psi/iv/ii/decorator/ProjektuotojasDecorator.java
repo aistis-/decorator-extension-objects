@@ -8,12 +8,16 @@ public class ProjektuotojasDecorator extends DarbininkasDecorator {
     }
 	
 	public void dirbti(Map<String, Object> darbai) {
-		super.pridetiDarba("suprojektuoti siena");
+		projektuotiSiena();
 		
 		super.dirbti(darbai);
     }
 	
 	public String kaMoka() {
 		return super.kaMoka() + ", suprojektuoti siena";
+	}
+	
+	private void projektuotiSiena() {
+		super.pridetiDarba("suprojektuoti siena");
 	}
 }
