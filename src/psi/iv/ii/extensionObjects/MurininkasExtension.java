@@ -7,11 +7,11 @@ public class MurininkasExtension extends DarbininkasExtender {
 		this.pleciamasDarbininkas = pleciamasDarbininkas;
     }
 	
-	public void dirbti(Map<String, Object> darbai) {
+	public float dirbti(Map<String, Object> darbai, float likoValandu) {
 		super.pridetiDarba("maisyti glaista");
 		super.pridetiDarba("muryti sienas");
 		
-		super.dirbti(darbai);
+		return super.dirbti(darbai, likoValandu);
     }
 	
 	public String kaMoka() {

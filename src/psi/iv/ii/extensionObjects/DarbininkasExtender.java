@@ -5,8 +5,8 @@ import java.util.Map;
 public abstract class DarbininkasExtender {
     protected DarbininkasInterface pleciamasDarbininkas;
     
-    public void dirbti(Map<String, Object> darbai) {
-    	pleciamasDarbininkas.dirbti(darbai);
+    public float dirbti(Map<String, Object> darbai, float likoValandu) {
+    	return pleciamasDarbininkas.dirbti(darbai, likoValandu);
     }
     
     public String kaMoka() {

@@ -6,12 +6,14 @@ import java.util.Map;
 public class Darbininkas implements DarbininkasInterface {
     private String[] kaMoka = { "pasluoti", "rinkti siuksles" };
 
-    public void dirbti(Map<String, Object> darbai) {
-    	float darboValandu = 8;
+    public float dirbti(Map<String, Object> darbai, float likoValandu) {
+    	float darboValandu = likoValandu;
     	
     	for (int i = 0; i < kaMoka.length; i++) {
     		darboValandu = skaiciuotiDarba(darbai, darboValandu, kaMoka[i]);
     	}
+    	
+    	return darboValandu;
     }
     
     public String kaMoka() {

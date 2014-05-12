@@ -22,13 +22,17 @@ public class Statybos {
     	
     	System.out.println(architektasPetras.kaMoka() + "\n");
     	
+    	float likoValandu;
+    	
     	for (int i = 1; i <= 10; i++) {
     		if (arDarbaiAtlikti(darbai)) {
     			break;
     		} else {
-    			architektasPetras.dirbti(darbai);
-    			architektasPetras.gautiExtension("ProjektuotojasExtension").dirbti(darbai);
-    			architektasPetras.gautiExtension("MurininkasExtension").dirbti(darbai);
+    			likoValandu = 8;
+    			
+    			likoValandu = architektasPetras.dirbti(darbai, likoValandu);
+    			likoValandu = architektasPetras.gautiExtension("ProjektuotojasExtension").dirbti(darbai, likoValandu);
+    			likoValandu = architektasPetras.gautiExtension("MurininkasExtension").dirbti(darbai, likoValandu);
     		}
     		
     		System.out.println("=======================");

@@ -7,10 +7,10 @@ public class ProjektuotojasExtension extends DarbininkasExtender {
 		this.pleciamasDarbininkas = pleciamasDarbininkas;
     }
 	
-	public void dirbti(Map<String, Object> darbai) {
+	public float dirbti(Map<String, Object> darbai, float likoValandu) {
 		super.pridetiDarba("suprojektuoti siena");
 		
-		super.dirbti(darbai);
+		return super.dirbti(darbai, likoValandu);
     }
 	
 	public String kaMoka() {
