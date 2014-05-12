@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import psi.iv.ii.decorator.MurininkasDecorator;
+import psi.iv.ii.decorator.ProjektuotojasDecorator;
+
 public class Statybos {
 
     public static void main(String[] args) {
@@ -19,6 +22,24 @@ public class Statybos {
     	architektasPetras.pridetiExtension(new ProjektuotojasExtension(architektasPetras));
     	architektasPetras.pridetiExtension(new MurininkasExtension(architektasPetras));
 //    	architektasPetras.pasalintiExtension("MurininkasExtension");
+    	
+    	ProjektuotojasExtension projektuotojasExtension = (ProjektuotojasExtension) architektasPetras.gautiExtension(
+    		"ProjektuotojasExtension"
+		);
+    	
+		if (projektuotojasExtension != null) {
+			projektuotojasExtension.isjungtiSignalizacija();
+		} else {
+			System.out.println("Petras neturi teises isjunti signalizacijos");
+		}
+		
+		MurininkasExtension murininkasExtension = (MurininkasExtension) architektasPetras.gautiExtension("MurininkasExtension");
+		
+		if (murininkasExtension != null) {
+			murininkasExtension.ijungtiSignalizacija();
+		} else {
+			System.out.println("Petras neturi teises ijunti signalizacijos");
+		}
     	
     	float likoValandu;
     	

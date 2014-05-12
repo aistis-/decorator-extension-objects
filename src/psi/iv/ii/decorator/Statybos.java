@@ -20,6 +20,26 @@ public class Statybos {
     	architektasPetras = new MurininkasDecorator(architektasPetras);
 //    	architektasPetras = DarbininkasDecorator.pasalintiRole(architektasPetras, "MurininkasDecorator");
     	
+    	ProjektuotojasDecorator projektuotojasDecorator = (ProjektuotojasDecorator) DarbininkasDecorator.surastiIrGauti(
+			architektasPetras, "ProjektuotojasDecorator"
+		);
+    	
+		if (projektuotojasDecorator != null) {
+			projektuotojasDecorator.isjungtiSignalizacija();
+		} else {
+			System.out.println("Petras neturi teises isjunti signalizacijos");
+		}
+		
+		MurininkasDecorator murininkasDecorator = (MurininkasDecorator) DarbininkasDecorator.surastiIrGauti(
+			architektasPetras, "MurininkasDecorator"
+		);
+		
+		if (murininkasDecorator != null) {
+			murininkasDecorator.ijungtiSignalizacija();
+		} else {
+			System.out.println("Petras neturi teises ijunti signalizacijos");
+		}
+    	
     	System.out.println(architektasPetras.kaMoka() + "\n");
     	
     	for (int i = 1; i <= 10; i++) {

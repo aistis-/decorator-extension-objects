@@ -29,8 +29,20 @@ abstract class DarbininkasDecorator implements DarbininkasInterface {
 				((DarbininkasDecorator) darbininkas).dekoruojamasDarbininkas = pasalintiRole(((DarbininkasDecorator) darbininkas).dekoruojamasDarbininkas, rolesKlasesPavadinimas);
 				return darbininkas;
 			}
-		} catch (ClassCastException | NullPointerException e) {
+		} catch (ClassCastException e) {
 			return null;
+		}
+	}
+    
+	public static DarbininkasInterface surastiIrGauti(DarbininkasInterface darbininkas, String rolesKlasesPavadinimas) {
+		if (rolesKlasesPavadinimas.equals(darbininkas.getClass().getSimpleName())) {
+			return ((DarbininkasDecorator) darbininkas);
+		} else {
+			try {
+				return surastiIrGauti(((DarbininkasDecorator) darbininkas).dekoruojamasDarbininkas, rolesKlasesPavadinimas);
+			} catch (ClassCastException e) {
+				return null;
+			}
 		}
 	}
 }

@@ -20,4 +20,8 @@ public class ProjektuotojasExtension extends DarbininkasExtender {
 	private void projektuotiSiena() {
 		super.pridetiDarba("suprojektuoti siena");
 	}
+	
+	public void isjungtiSignalizacija() {
+		System.out.println("Signalizacija isjungta");
+	}
 }

@@ -25,4 +25,8 @@ public class MurininkasDecorator extends DarbininkasDecorator {
 	private void murytiSienas() {
 		super.pridetiDarba("muryti sienas");
 	}
+	
+	public void ijungtiSignalizacija() {
+		System.out.println("Signalizacija ijungta");
+	}
 }
