@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public interface DarbininkasInterface {
-	public static Map<String, DarbininkasExtender> objects = new HashMap<String, DarbininkasExtender>();
+	public Map<String, DarbininkasExtender> objects = new HashMap<String, DarbininkasExtender>();
 	
 	public float dirbti(Map<String, Object> darbai, float likoValandu);
 	public String kaMoka();

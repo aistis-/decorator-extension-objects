@@ -18,9 +18,7 @@ public class Statybos {
     	DarbininkasInterface architektasPetras = new Darbininkas();
     	architektasPetras.pridetiExtension(new ProjektuotojasExtension(architektasPetras));
     	architektasPetras.pridetiExtension(new MurininkasExtension(architektasPetras));
-//    	architektasPetras.pasalintiExtension("MurininkasDecorator");
-    	
-    	System.out.println(architektasPetras.kaMoka() + "\n");
+//    	architektasPetras.pasalintiExtension("MurininkasExtension");
     	
     	float likoValandu;
     	
@@ -31,8 +29,8 @@ public class Statybos {
     			likoValandu = 8;
     			
     			likoValandu = architektasPetras.dirbti(darbai, likoValandu);
-    			likoValandu = architektasPetras.gautiExtension("ProjektuotojasExtension").dirbti(darbai, likoValandu);
-    			likoValandu = architektasPetras.gautiExtension("MurininkasExtension").dirbti(darbai, likoValandu);
+    			likoValandu = architektasPetras.gautiExtension("ProjektuotojasExtension") == null ? likoValandu : architektasPetras.gautiExtension("ProjektuotojasExtension").dirbti(darbai, likoValandu);
+    			likoValandu = architektasPetras.gautiExtension("MurininkasExtension") == null ? likoValandu : architektasPetras.gautiExtension("MurininkasExtension").dirbti(darbai, likoValandu);
     		}
     		
     		System.out.println("=======================");
