@@ -2,7 +2,8 @@
 <class-diagram version="1.1.5" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true">  
   <class id="1" language="java" name="psi.iv.ii.decorator.Statybos" project="decorator-extension-objects" 
-    file="/decorator-extension-objects/src/psi/iv/ii/decorator/Statybos.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="/decorator-extension-objects/src/psi/iv/ii/extensionObjects/Statybos.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="158" y="112"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
