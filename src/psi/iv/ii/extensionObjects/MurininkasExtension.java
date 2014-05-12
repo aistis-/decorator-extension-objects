@@ -8,13 +8,21 @@ public class MurininkasExtension extends DarbininkasExtender {
     }
 	
 	public float dirbti(Map<String, Object> darbai, float likoValandu) {
-		super.pridetiDarba("maisyti glaista");
-		super.pridetiDarba("muryti sienas");
+		maisytiGlaista();
+		murytiSienas();
 		
 		return super.dirbti(darbai, likoValandu);
     }
 	
 	public String kaMoka() {
 		return super.kaMoka() + ", maisyti glaista, muryti sienas";
+	}
+	
+	private void maisytiGlaista() {
+		super.pridetiDarba("maisyti glaista");
+	}
+	
+	private void murytiSienas() {
+		super.pridetiDarba("muryti sienas");
 	}
 }
